@@ -1,0 +1,362 @@
+import random
+import time
+from time import sleep
+
+global racer_name
+global team_name
+
+#def game_over():
+    
+    #print("""
+    
+    #I TIFOSI DELLA FERRARI!
+    
+   #Due to poor choices you have been disqualified!
+
+    #""")
+    
+    #fail()
+
+def race_on():
+    
+    global racer_name
+    global team_name
+
+    
+    print("""\n
+------------------------------------------------------------------------------\033[1m\x1b[31m
+    _                /'_'_/.-''/                             _______
+  \`../ |o_..__     / /__   / /  -=  JAPAN GRAND PRIX  =-   _\=.o.=/_
+`.,(_)______(_).>  / ___/  / /                             |_|_____|_|
+~~~~~~~~~~~~~~~~~~/_/~~~~~/_/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Paul Friedrich~~\033[0m
+    
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+To log into your racing dash, please sign in with your name and your team:\n""")
+    time.sleep(1)
+
+    print("Team: \n")
+    team_name = input('Input Team Name: \n')
+    
+    #Game_Over = input("> ")
+    #game_over = game_over.lower()
+    
+    #if game_over == 'mercedes':
+        #game_over()
+    
+    print(f"""\n
+------------------------------------------------------------------------------
+Welcome to the {team_name} dashboard! What is your team ID?\n""")
+    time.sleep(1)
+    
+    print("ID: \n")
+    racer_name = input('Input Surname: \n')
+    
+    #Game_Over_2 = input("> ")
+    #game_over_2 = game_over_2.lower()
+    
+    #if game_over == 'hamilton':
+        #game_over()
+    
+    print(f"""  
+------------------------------------------------------------------------------    
+Welcome {racer_name}!
+
+We are at the 76th annual Grand Prix of Japan, here at the Suzuka Interntional 
+Racing Course! 
+         
+We are a few races from the end of the season, however if victorious, our team 
+will secure the 2019 constructors title and you will be even closer to calling 
+yourself the Formula 1 worldchampion!
+
+Racing is a matter of spirit not strength - now get your head in the game!
+------------------------------------------------------------------------------""")
+    time.sleep(6)
+    
+    stage_1()
+
+    
+def fail_crash():
+    
+    global racer_name
+    global team_name
+    
+    print(f"""
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+Team Manager:
+    \033[1m\x1b[31m
+😠 {racer_name} just cost {team_name} the constructor title!!!! 
+😡 Blithering IDIOT!!! AAHHHH URGGGHHHHH!! 
+🤬 Get your ass back to the pit, we have some talking to do...  
+------------------------------------------------------------------------------    
+--------------------------------------------------------------------------\033[0m
+
+Would you like to fast forward to next season? (yes/no)
+
+""")
+    
+    replay = input("> ")
+    replay = replay.lower()
+    
+    if replay == 'yes':
+        race_on()
+        
+    else:
+        print(f"""
+------------------------------------------------------------------------------
+{team_name} fired you for your poor perfomance in the Grand Prix of Japan...
+------------------------------------------------------------------------------""")
+        exit(0)
+        
+        
+def defend_lead():
+    
+    global racer_name
+    global team_name
+    
+    print(f"""
+------------------------------------------------------------------------------
+Team Manager:
+\x1B[3m
+😲 {racer_name}, you did it!!!! 
+🤩 Now just stay ahead of the pack and bring home the trophy!!!  
+------------------------------------------------------------------------------\033[0m""")
+    print(f"""
+------------------------------------------------------------------------------
+Team Manager:
+\x1B[3m
+Watch out! Hamilton is approaching quickly!  
+Don't let him go by in the fourth corner!!!
+------------------------------------------------------------------------------\033[0m
+""")
+
+    print("""
+------------------------------------------------------------------------------
+There are multiple options as to approach the fourth corner of Suzuka:
+    
+    \033[4mAPPROACH       EXIT\033[0m
+A)   Inside       Go Wide
+B)   Inside     Tight Turn
+C)    Wide        Go Wide
+D)    Wide      Tight Turn
+------------------------------------------------------------------------------""")
+    
+    choice = input(">  \n")
+    choice = choice.lower()
+
+    if "a" in choice or "inside and wide" in choice:
+        print("\nYou cut Hamilton off! He was unable to pass!\n")
+        time.sleep(1)
+        pit_stop()
+    
+    elif "b" in choice or "inside and turn tight" in choice or "inside and tight turn" in choice:
+        print("""\nHamilton had the chance to pass, but the inside lane was quicker!""")
+        time.sleep(1)
+        pit_stop()
+
+    elif "c" in choice or "wide and go wide" in choice or "wide and exit wide" in choice:
+        print("""\nYou took the outside lane! Bad choice! You have been overtaken by both Mercedes drivers!""")
+        time.sleep(1)
+        safety_car_slow
+        ()
+        
+    elif "d" in choice or "wide and turn tight" in choice or "wide and tight turn" in choice:
+        print("""\n\033[1mRace over! You cut off Hamilton and he crashed into you!\033[0m!""")
+        time.sleep(1)
+        fail_crash()
+
+    
+def stage_1():
+    print("""
+🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁
+------------------------------------------------------------------------------
+The first pair of lights on the starting light system lights up!\n""")
+    time.sleep(2)
+
+    print("...3!\n")
+    time.sleep(1)
+    
+    print("...2!\n")
+    time.sleep(1)
+    
+    print("...1!\n")
+    time.sleep(1)
+    
+    print(f"""\033[1m\x1b[31m
+      _____  ____  _    _____  ____  _    _____  ____  _ 
+     / ____|/ __ \| |  / ____|/ __ \| |  / ____|/ __ \| |
+    | |  __| |  | | | | |  __| |  | | | | |  __| |  | | |
+    | | |_ | |  | | | | | |_ | |  | | | | | |_ | |  | | |
+    | |__| | |__| |_| | |__| | |__| |_| | |__| | |__| |_|
+     \_____|\____/(_)  \_____|\____/(_)  \_____|\____/(_)
+     \033[0m
+     
+                                      d88b
+                      _______________|8888|_______________
+                     |_____________ ,~~~~~~. _____________|
+   _________         |_____________: mmmmmm :_____________|         _________
+  / _______ \   ,----|~~~~~~~~~~~,'\ _...._ /`.~~~~~~~~~~~|----,   / _______ \\
+ | /       \ |  |    |       |____|,d~    ~b.|____|       |    |  | /       \ |
+ ||         |-------------------\-d.-~~~~~~-.b-/-------------------|         ||
+ ||         | |8888 ....... _,===~/......... \~===._         8888| |         ||
+ ||         |=========_,===~~======._.=~~=._.======~~===._=========|         ||
+ ||         | |888===~~ ...... //,, .`~~~~'. .,\\        ~~===888| |         ||
+ ||        |===================,P'.::::::::.. `?,===================|        ||
+ ||        |_________________,P'_::----------.._`?,_________________|        ||
+ `|        |-------------------~~~~~~~~~~~~~~~~~~-------------------|        |'
+   \_______/                                                        \_______/
+                 
+    """)
+
+    
+    time.sleep(1)
+    start_race()
+    
+def safety_car_slow():
+    
+    print(f"""
+------------------------------------------------------------------------------
+After overtaking your team mate, you had the chance to catch up with the 
+Mercedes drivers on POS 1 & 2. 
+
+42 laps into the race, lapping multiple cars two drivers collide a turn ahead
+of you, sending them into a spin off the track! 
+
+You see the \033[1mYELLOW FLAG\033[0m and know that you will lose big time if 
+the safety car deploys between you and the Mercedes on POS 1 & 2. 
+------------------------------------------------------------------------------
+    """)
+    time.sleep(2)
+    print(f"""
+------------------------------------------------------------------------------
+Will you pass the driver infront of you to get ahead of the accident before 
+the safety car is deployed? (yes/no)
+------------------------------------------------------------------------------
+    """)
+    
+    choice = input(">  \n")
+    choice = choice.lower()
+
+    if "yes" in choice or "pass the accident" in choice or "pass" in choice or "pass accident" in choice:
+        print("""\n
+------------------------------------------------------------------------------
+A yellow flag indicates danger ahead and \033[1movertaking is strictly prohibited!\033[0m
+------------------------------------------------------------------------------\n""")
+        time.sleep(1)
+        fail_crash()
+
+    elif "no" in choice or "don't pass the accident" in choice or "dont pass" in choice or "don't pass" in choice or "dont pass the accident" in choice:
+        print("""\n
+------------------------------------------------------------------------------        
+Team Manager:
+
+I'm glad you slowed down! 
+Looked like you wanted to overtake the guy ahead of you for a second there...
+
+Ok, this is a great opportunity to pit and try to make up for the lost time!
+------------------------------------------------------------------------------\n""")
+        time.sleep(2)
+        pit_stop()
+    
+    
+def mid_race():
+    
+    print(f"""
+------------------------------------------------------------------------------
+Team Manager:
+\x1B[3m
+Your team mate had an excellent start, was able to pass a lot of cars and is 
+now ahead of you!
+
+You can pass him in an upcoming turn!
+------------------------------------------------------------------------------\033[0m
+    """)
+    time.sleep(1.5)
+    question = "The manager just offered for you to overtake your team mate, will you?"
+    while "the answer is invalid":
+        reply = str(input(question+' (yes/no): ')).lower().strip()
+        if reply[0] == 'yes':
+            return True
+            print("""\n
+------------------------------------------------------------------------------
+Team Manager:
+\x1B[3m
+You will have a chance to overtake him in a few turns!\033[0m
+------------------------------------------------------------------------------\n""")
+            time.sleep(1)
+            safety_car_slow()
+        if reply[0] == 'no':
+            return False
+            print("""\n
+------------------------------------------------------------------------------        
+Team Manager:
+\x1B[3m
+Do I have to remind you of your position as the \033[1mFIRST DRIVER\033[0m???
+Think again!\033[0m
+------------------------------------------------------------------------------\n""")
+            time.sleep(1)
+def attack_start():
+    
+    attack_list = ['crash', 'succeed', 'crash', 'crash', 'succeed', 'succeed', 'succeed']
+    random.choice(attack_list)
+
+    if "crash" in random.choice(attack_list):
+        print("\nYou have crashed in the first corner!\n")
+        fail_crash()
+            
+    elif "succeed" in random.choice(attack_list):
+        print("""\n\033[1mCONGRATULATIONS! Your gamble has paid off - POS 1!!!\033[0m!""")
+        time.sleep(1)
+        defend_lead()
+  
+    #defend_lead()    
+    
+def start_race():
+    print("""
+------------------------------------------------------------------------------
+The lights go out & you have a split second to decide whether you want to:
+    
+A) Attack and try to take the lead!
+B) Play it safe, not risking a DNF!
+------------------------------------------------------------------------------""")
+    
+    choice = input(">  \n")
+    choice = choice.lower()
+
+    if "a" in choice or "attack" in choice or "take the lead" in choice:
+        print("\nFaster, faster, faster, until the thrill of speed overcomes the fear of death!\n")
+        time.sleep(1.5)
+        attack_start()
+        time.sleep(1)
+    
+    elif "b" in choice or "play it safe" in choice or "safe" in choice:
+        print("""\nWith an unspectacular start to the race you are stuck on \033[1mPOS 4\033[0m""")
+        time.sleep(1.5)
+        print(f"""
+------------------------------------------------------------------------------  
+Team Manager:
+\x1B[3m
+Good call! You will have enough opportunities...
+------------------------------------------------------------------------------
+    \033[0m""")
+        time.sleep(1.5)
+        mid_race()
+        time.sleep(1)
+    
+    else:
+        print("""
+------------------------------------------------------------------------------
+Team Manager:     
+\033[1m\x1b[31m
+😠 DAMN! YOU CHOKED THE ENGINE!!! IDIOT!! 
+😡 RESTART YOUR CAR IMMEDIATELY!! 
+🤬 HURRY UP AND GO AGAIN!!!!!
+------------------------------------------------------------------------------\033[0m""")
+        input("<Press enter to continue>\n")  
+        start_race()
+   
+    #attack_start()
+
+    
+race_on ()
